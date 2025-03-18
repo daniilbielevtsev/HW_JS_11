@@ -1,35 +1,3 @@
-const bankAccount = {
-  ownerName: "User",
-  accountNumber: "123456789",
-  balance: 5000,
-
-  deposit() {
-    if (confirm("Бажаєте поповнити рахунок?")) {
-      let amount = parseFloat(prompt("Введіть сумупоповнення:"));
-      if (!isNaN(amount) && amount > 0) {
-        this.balance += amount;
-        console.log(
-          `Рахунок поповнено на ${amount} грн. Ваш баланс: ${this.balance} грн.`
-        );
-      } else {
-        console.log("Некоректна сума.");
-      }
-    }
-  },
-
-  withdraw() {
-    if (confirm("Бажаєте зняти гроші?")) {
-      let amount = parseFloat(prompt("Введіть суму для зняття:"));
-      if (!isNaN(amount) && amount > 0 && amount <= this.balance) {
-        this.balance -= amount;
-        console.log(`Знято ${amount} грн. Новий баланс: ${this.balance} грн.`);
-      } else {
-        console.log("Некоректна сума або недостатньо коштів.");
-      }
-    }
-  },
-};
-
 bankAccount.deposit();
 bankAccount.withdraw();
 //2
